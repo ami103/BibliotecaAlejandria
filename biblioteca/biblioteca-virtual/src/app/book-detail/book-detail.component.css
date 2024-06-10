@@ -1,0 +1,90 @@
+.book-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Añade un espacio entre los contenedores */
+    padding: 1em;
+  }
+  
+  .book-cover {
+    flex: 1;
+    max-width: 25%; /* Reducir el tamaño máximo de la portada */
+  }
+  
+  .book-cover img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .book-info {
+    flex: 2;
+  }
+  
+  .book-info h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  .book-info p {
+    margin: 0.5em 0;
+  }
+  
+  .read-now-button,
+  .download-button {
+    background-color: #007bff;
+    color: white;
+    max-width: 40%;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    margin-top: 1em;
+    text-decoration: none;
+  }
+  
+  .read-now-button:hover,
+  .download-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .book-preview {
+    flex: 3;
+    height: 450px; /* Reducir la altura según sea necesario */
+    margin-left: 20px; /* Espacio a la izquierda de la vista previa */
+    margin-right: 20px; /* Espacio a la derecha de la vista previa */
+    padding: 20px; /* Espacio interior dentro de la vista previa */
+    background-color: #f9f9f9; /* Color de fondo para la vista previa */
+    border: 1px solid #ddd; /* Borde alrededor de la vista previa */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  .book-preview iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  @media (max-width: 768px) {
+    .book-detail {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .book-cover {
+      max-width: 100%;
+      margin-bottom: 1em;
+    }
+  
+    .book-info {
+      padding-left: 0;
+    }
+  
+    .book-preview {
+      width: 100%;
+      height: 400px; /* Ajusta la altura para dispositivos móviles */
+    }
+  }
+  

@@ -1,0 +1,20 @@
+<div *ngIf="noResultsMessage" class="no-results-message">
+  {{ noResultsMessage }}
+</div>
+<div *ngIf="!noResultsMessage" class="book-list">
+  <div *ngFor="let book of books" class="book-item" (click)="goToDetail(book.id)">
+    <img [src]="book.formats['image/jpeg']" alt="{{ book.title }}">
+    <h2>{{ book.title }}</h2>
+    <p>{{ book.authors[0].name }}</p>
+    <button 
+      (click)="toggleFavorite(book, $event)" 
+      [ngClass]="isFavorite(book) ? 'added-button' : 'favorite-button'"
+    >
+      {{ isFavorite(book) ? 'Added' : 'Add to My Collection' }}
+    </button>
+  </div>
+</div>
+<div class="pagination-buttons" *ngIf="!noResultsMessage">
+  <button (click)="prevPage()" [disabled]="page === 1">&lt;</button>
+  <button (click)="nextPage()">&gt;</button>
+</div>

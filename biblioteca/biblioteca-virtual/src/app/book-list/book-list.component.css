@@ -1,0 +1,128 @@
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.book-item {
+  flex: 1 1 calc(25% - 1em);
+  margin: 0.5em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1em;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 450px;
+  box-sizing: border-box;
+  cursor: default; /* Evitar que todo el item sea clicable */
+  transition: transform 0.3s;
+}
+
+.book-item:hover {
+  transform: scale(1.05);
+}
+
+.book-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1em;
+}
+
+.book-item h2 {
+  font-size: 1.2em;
+  margin: 0 0 0.5em;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end; /* Asegura que el título esté pegado al fondo */
+  justify-content: center; /* Centra el texto horizontalmente */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Limitar el título a una línea */
+}
+
+.book-item p {
+  margin: 0 0 1em;
+  text-align: center;
+  white-space: normal; /* Permitir múltiples líneas para el nombre del autor */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.favorite-button {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: auto; /* Empuja el botón al fondo del contenedor */
+}
+
+.favorite-button:hover {
+  background-color: #0056b3;
+}
+
+.added-button {
+  background-color: #4CAF50; /* Color verde para el botón 'Added' */
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  margin-top: auto; /* Empuja el botón al fondo del contenedor */
+}
+
+.added-button:hover {
+  background-color: #388E3C; /* Color verde oscuro para el hover */
+}
+
+@media (max-width: 1024px) {
+  .book-item {
+    flex: 1 1 calc(33.33% - 1em);
+  }
+}
+
+@media (max-width: 768px) {
+  .book-item {
+    flex: 1 1 calc(50% - 1em);
+  }
+}
+
+@media (max-width: 480px) {
+  .book-item {
+    flex: 1 1 100%;
+  }
+}
+
+.no-results-message {
+  font-size: 2em;
+  color: #f50057;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 2em 0;
+}
+
+.pagination-buttons button {
+  background-color: #3f51b5;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 2rem;
+}
+
+.pagination-buttons button:disabled {
+  background-color: #ccc;
+}

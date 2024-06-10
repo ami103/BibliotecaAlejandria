@@ -1,0 +1,41 @@
+version: latest
+
+services:
+  frontend:
+    build:
+      context: ./biblioteca-virtual
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    command: npm start
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./biblioteca-backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ami103
+      SPRING_DATASOURCE_USERNAME: ami103
+      SPRING_DATASOURCE_PASSWORD: ami103
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: ami103
+      POSTGRES_PASSWORD: ami103
+      POSTGRES_DB: ami103
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

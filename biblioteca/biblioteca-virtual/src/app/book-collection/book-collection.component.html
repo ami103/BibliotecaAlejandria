@@ -1,0 +1,13 @@
+<div *ngIf="noResultsMessage" class="no-results-message">
+  {{ noResultsMessage }}
+</div>
+<div *ngIf="!noResultsMessage" class="book-list">
+  <div *ngFor="let book of favoriteBooks" class="book-item">
+    <img [src]="book.formats['image/jpeg']" alt="{{ book.title }}">
+    <h2>{{ book.title }}</h2>
+    <p>{{ book.authors[0].name }}</p>
+    <button (click)="removeFromFavorites(book)" class="remove-button">
+      Remove
+    </button>
+  </div>
+</div>

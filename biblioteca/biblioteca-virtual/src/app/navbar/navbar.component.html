@@ -1,0 +1,14 @@
+<nav>
+  <div class="logo">
+    <a [routerLink]="['/']">
+      <img src="assets/logo.svg" alt="Logo" class="logo-image">
+    </a>
+    Biblioteca Alejandría
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar..." [(ngModel)]="searchQuery" (keyup.enter)="searchBooks()" />
+  </div>
+  <div class="auth-buttons">
+    <a routerLink="/book-collection" class="collection-button">Mi colección</a>
+  </div>
+</nav>

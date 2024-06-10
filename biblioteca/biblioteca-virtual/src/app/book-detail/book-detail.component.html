@@ -1,0 +1,35 @@
+<div class="book-detail" *ngIf="book">
+    <div class="book-cover">
+      <img [src]="book.formats['image/jpeg']" alt="{{ book.title }}">
+    </div>
+    <div class="book-preview" *ngIf="previewContent">
+      <iframe [srcdoc]="previewContent"></iframe>
+    </div>
+    <div class="book-info">
+      <h1>{{ book.title }}</h1>
+      <p *ngIf="book.authors && book.authors.length > 0">
+        <strong>Author(s):</strong> {{ book.authors[0].name }} ({{ book.authors[0].birth_year }} - {{ book.authors[0].death_year }})
+      </p>
+      <p *ngIf="book.languages && book.languages.length > 0">
+        <strong>Languages:</strong> {{ book.languages.join(', ') }}
+      </p>
+      <p><strong>Downloads:</strong> {{ book.download_count }}</p>
+      <div *ngIf="book.bookshelves && book.bookshelves.length > 0">
+        <p><strong>Genres:</strong></p>
+        <ul>
+          <li *ngFor="let bookshelf of book.bookshelves">{{ bookshelf }}</li>
+        </ul>
+      </div>
+      <div *ngIf="book.subjects && book.subjects.length > 0">
+        <p><strong>Tags:</strong></p>
+        <ul>
+          <li *ngFor="let subject of book.subjects">{{ subject }}</li>
+        </ul>
+      </div>
+      <div *ngIf="downloadUrl">
+        <p><strong>Download:</strong></p>
+        <a [href]="downloadUrl" class="download-button" target="_blank">Download Book</a>
+      </div>
+    </div>
+  </div>
+  
