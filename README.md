@@ -1,6 +1,6 @@
 # Biblioteca Inteligente
 
-Proyecto individual para la asignatura **Desarrollo Rápido de Aplicaciones**.Este proyecto es una aplicación web desarrollada con Angular en el frontend y Spring Boot en el backend. Permite a los usuarios buscar libros a través de la API de Gutendex, añadir libros favoritos a una colección y gestionar la lista de favoritos de forma persistente.
+Proyecto individual para la asignatura **Desarrollo Rápido de Aplicaciones**. Este proyecto es una aplicación web desarrollada con Angular en el frontend y Spring Boot en el backend. Permite a los usuarios buscar libros a través de la API de Gutendex, añadir libros favoritos a una colección y gestionar la lista de favoritos de forma persistente.
 
 ## Características
 
